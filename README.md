@@ -18,12 +18,12 @@ Contents:
 5. predictions
 
 
-#Obtaining Data
+Obtaining Data
 ---
 I downloaded the data as a zip from [here](https://www.cs.toronto.edu/~kriz/cifar.html). The data came as a (10000 x 3072) tensor. Where each image was a vector tensor of size 3072. 
 
 
-#Viewing Image
+Viewing Image
 ---
 To view the image I had to reshape the image using .reshape(3,32,32), then transpose with np.transpose(res, axes=[1, 2, 0]). This puts the image into a eligible format.
 
