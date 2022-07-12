@@ -52,6 +52,42 @@ I decided to reformat my data into with a modified show_image funtion before fee
 
 #### Improvement 4
 I decided to improve the model itself, instead of using two dense layers I decided to build a model with multiple layers. 
-
+```
+Model: "sequential_4"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ conv2d (Conv2D)             (None, 30, 30, 32)        896       
+                                                                 
+ conv2d_1 (Conv2D)           (None, 28, 28, 32)        9248      
+                                                                 
+ max_pooling2d (MaxPooling2D  (None, 14, 14, 32)       0         
+ )                                                               
+                                                                 
+ conv2d_2 (Conv2D)           (None, 12, 12, 64)        18496     
+                                                                 
+ conv2d_3 (Conv2D)           (None, 10, 10, 64)        36928     
+                                                                 
+ max_pooling2d_1 (MaxPooling  (None, 5, 5, 64)         0         
+ 2D)                                                             
+                                                                 
+ flatten (Flatten)           (None, 1600)              0         
+                                                                 
+ dense_15 (Dense)            (None, 512)               819712    
+                                                                 
+ dense_16 (Dense)            (None, 128)               65664     
+                                                                 
+ dense_17 (Dense)            (None, 32)                4128      
+                                                                 
+ dense_18 (Dense)            (None, 10)                330       
+                                                                 
+ dense_19 (Dense)            (None, 10)                110       
+                                                                 
+=================================================================
+Total params: 955,512
+Trainable params: 955,512
+Non-trainable params: 0
+_________________________________________________________________
+```
 
 
