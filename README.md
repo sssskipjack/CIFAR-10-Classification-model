@@ -29,8 +29,7 @@ I had issues viewing the images when I tried to reshape them into 32 x 32 size a
 
  I found out I had to reshape the image using .reshape(3,32,32), then transpose with np.transpose(res, axes=[1, 2, 0]). This puts the image into a eligible format. I created a show_image function that allows me to view the image, which I later converted in to a function that converted my dataset into the other format.
  
- ![image format](\cifar-10%20tranpose%20images.png "Image format png")
-
+ ![image format](/cifar-10%20tranpose%20images.png "Image format png")
 
 
 
@@ -40,12 +39,32 @@ I started off by dividing my training and testing data sets by 255, to alow them
 
 I used a Sequential model with 2 layers with 128 nodes each, and a output layer with 10 nodes to represent each one of the possible categories
 
+```
+First version model
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ dense_1 (Dense)            (None, 128)               393344    
+                                                                 
+ dense_2 (Dense)            (None, 128)               16512     
+                                                                 
+ dense_3 (Dense)            (None, 10)                1290      
+                                                                 
+=================================================================
+Total params: 411,146
+Trainable params: 411,146
+Non-trainable params: 0
+_________________________________________________________________
+```
+
 My model falied to fit, I got a ValueError: Failed to find data adapter ... etc. I fixed this my converting my Y training and testing sets from lists to numpy arrays
 
 My first fitted model, was broken. The loss and acuracy did not change between epochs, and the accuracy was 0.10, which made sense statistically if the model was guessing completely randomly.
 
 #### Improvement 2
 To optimize my model, I change the activation function of the output layer into softmax. My model this time begins to overfit at around 8 epochs, and has a validation accuracy of approximately 0.40. This is a major improvement over my previous model, and It shows my model is working as intended, and learning from the training set.
+
+`
 
 #### Improvement 3
 I decided to reformat my data into with a modified show_image funtion before feeding it into the model. I created a convert_dataset function that transformed every image in the dataset with the transformations shown in "Displaying Image". I found that feeding the image as (3,32,32) verses (1,3072) has absolutely no effect on the model. This model produced almost identical results as the previous model.
@@ -73,15 +92,15 @@ _________________________________________________________________
                                                                  
  flatten (Flatten)           (None, 1600)              0         
                                                                  
- dense_15 (Dense)            (None, 512)               819712    
+ dense_1 (Dense)            (None, 512)               819712    
                                                                  
- dense_16 (Dense)            (None, 128)               65664     
+ dense_2 (Dense)            (None, 128)               65664     
                                                                  
- dense_17 (Dense)            (None, 32)                4128      
+ dense_3 (Dense)            (None, 32)                4128      
                                                                  
- dense_18 (Dense)            (None, 10)                330       
+ dense_4 (Dense)            (None, 10)                330       
                                                                  
- dense_19 (Dense)            (None, 10)                110       
+ dense_5 (Dense)            (None, 10)                110       
                                                                  
 =================================================================
 Total params: 955,512
@@ -89,5 +108,5 @@ Trainable params: 955,512
 Non-trainable params: 0
 _________________________________________________________________
 ```
-
+This time my model stil began to overfit at around 8-9 epochs, however the validation accuracy was slightly better at around 0.52
 
