@@ -24,7 +24,13 @@ I downloaded the data as a zip from [here](https://www.cs.toronto.edu/~kriz/cifa
 
 Displaying Image
 ---
-I had issues viewing the images, I found out I had to reshape the image using .reshape(3,32,32), then transpose with np.transpose(res, axes=[1, 2, 0]). This puts the image into a eligible format. I created a show_image function that allows me to view the image, which I later converted in to a function that converted my dataset into the other format.
+I had issues viewing the images when I tried to reshape them into 32 x 32 size and plt.imshow()
+![failed frogs](/failed%20frogs.png "Failed Frogs png")
+
+ I found out I had to reshape the image using .reshape(3,32,32), then transpose with np.transpose(res, axes=[1, 2, 0]). This puts the image into a eligible format. I created a show_image function that allows me to view the image, which I later converted in to a function that converted my dataset into the other format.
+
+ ![image format](/cifar-10%transpose%images.png "Image format png")
+
 
 
 Creating model using Tensorflow
