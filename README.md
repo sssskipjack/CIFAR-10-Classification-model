@@ -61,15 +61,15 @@ My model falied to fit, I got a ValueError: Failed to find data adapter ... etc.
 
 My first fitted model, was broken. The loss and acuracy did not change between epochs, and the accuracy was 0.10, which made sense statistically if the model was guessing completely randomly.
 
-#### Improvement 2
+# Optimizing model
+
+#### Improvement 1
 To optimize my model, I change the activation function of the output layer into softmax. My model this time begins to overfit at around 8 epochs, and has a validation accuracy of approximately 0.40. This is a major improvement over my previous model, and It shows my model is working as intended, and learning from the training set.
 
-`
-
-#### Improvement 3
+#### Improvement 2
 I decided to reformat my data into with a modified show_image funtion before feeding it into the model. I created a convert_dataset function that transformed every image in the dataset with the transformations shown in "Displaying Image". I found that feeding the image as (3,32,32) verses (1,3072) has absolutely no effect on the model. This model produced almost identical results as the previous model.
 
-#### Improvement 4
+#### Improvement 3
 I decided to improve the model itself, instead of using two dense layers I decided to build a model with multiple layers. 
 ```
 Model: "sequential_4"
@@ -108,5 +108,21 @@ Trainable params: 955,512
 Non-trainable params: 0
 _________________________________________________________________
 ```
-This time my model stil began to overfit at around 8-9 epochs, however the validation accuracy was slightly better at around 0.52
+This time my model stil began to overfit at around 8-9 epochs
+![Epochs graph](/50%20epoch%20test.png "epochs graph")
+
+With these changes I was able to achieve a validation accuracy of 0.52, which is a improvement.
+
+
+#### Optimization 5
+
+For this optimization, Instead of using just batch 1 of the dataset, I used all 5 batches. 5 epochs was the optimal number, validation loss was the lowest, and validation accuracy was highest. After 5 epochs, my model began to overfit. 
+
+![loss](/model%205%20accuracy%20and%20validation%20accuracy.png)
+![Accuracy](/model%205%20validation%20loss%20and%20loss.png)
+
+This time, I had a validation accuracy of 0.70, which is significantly higher.
+
+#### Optimization 6
+
 
