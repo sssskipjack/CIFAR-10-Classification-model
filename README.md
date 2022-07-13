@@ -121,8 +121,9 @@ For this optimization, Instead of using just batch 1 of the dataset, I used all 
 ![loss](/model%205%20accuracy%20and%20validation%20accuracy.png)
 ![Accuracy](/model%205%20validation%20loss%20and%20loss.png)
 
-This time, I had a validation accuracy of 0.70, which is significantly higher.
+This time, I had a validation accuracy of 0.70, which is significantly higher. Simply by increasing the data set, I was able to improve my model by almost 20 percent
 
 #### Optimization 6
+
 
 
