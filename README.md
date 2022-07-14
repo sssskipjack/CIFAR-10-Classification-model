@@ -146,4 +146,4 @@ Epoch 8/8
 Here are some of the images, and the categories my model put them in.
 
 
-![predictions](/image%20predictions.png)
+![predictions](/image%20prediction.png)
