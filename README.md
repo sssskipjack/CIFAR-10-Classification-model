@@ -109,6 +109,7 @@ Non-trainable params: 0
 _________________________________________________________________
 ```
 This time my model stil began to overfit at around 8-9 epochs
+
 ![Epochs graph](/50%20epoch%20test.png "epochs graph")
 
 With these changes I was able to achieve a validation accuracy of 0.52, which is a improvement.
@@ -116,14 +117,28 @@ With these changes I was able to achieve a validation accuracy of 0.52, which is
 
 #### Optimization 5
 
-For this optimization, Instead of using just batch 1 of the dataset, I used all 5 batches. 5 epochs was the optimal number, validation loss was the lowest, and validation accuracy was highest. After 5 epochs, my model began to overfit. 
+For this optimization, Instead of using just batch 1 of the dataset, I used all 5 batches. 5 epochs was the optimal number, validation loss was the lowest, and validation accuracy was leveling out. After 5 epochs, my model began to overfit as validation loss rose 
 
 ![loss](/model%205%20accuracy%20and%20validation%20accuracy.png)
 ![Accuracy](/model%205%20validation%20loss%20and%20loss.png)
 
 This time, I had a validation accuracy of 0.70, which is significantly higher. Simply by increasing the data set, I was able to improve my model by almost 20 percent
 
-#### Optimization 6
 
-
-
+```Epoch 1/8
+1250/1250 [==============================] - 136s 107ms/step - loss: 1.7186 - accuracy: 0.3540 - val_loss: 1.3694 - val_accuracy: 0.5045
+Epoch 2/8
+1250/1250 [==============================] - 126s 101ms/step - loss: 1.2325 - accuracy: 0.5583 - val_loss: 1.0975 - val_accuracy: 0.6093
+Epoch 3/8
+1250/1250 [==============================] - 141s 112ms/step - loss: 0.9999 - accuracy: 0.6462 - val_loss: 1.0169 - val_accuracy: 0.6408
+Epoch 4/8
+1250/1250 [==============================] - 131s 105ms/step - loss: 0.8488 - accuracy: 0.7036 - val_loss: 0.9426 - val_accuracy: 0.6758
+Epoch 5/8
+1250/1250 [==============================] - 141s 113ms/step - loss: 0.7315 - accuracy: 0.7471 - val_loss: 0.8589 - val_accuracy: 0.7076
+Epoch 6/8
+1250/1250 [==============================] - 135s 108ms/step - loss: 0.6214 - accuracy: 0.7822 - val_loss: 0.8646 - val_accuracy: 0.7065
+Epoch 7/8
+1250/1250 [==============================] - 136s 109ms/step - loss: 0.5158 - accuracy: 0.8204 - val_loss: 0.8595 - val_accuracy: 0.7219
+Epoch 8/8
+1250/1250 [==============================] - 138s 110ms/step - loss: 0.4341 - accuracy: 0.8497 - val_loss: 0.9820 - val_accuracy: 0.7148
+```
