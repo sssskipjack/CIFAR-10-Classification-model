@@ -142,3 +142,6 @@ Epoch 7/8
 Epoch 8/8
 1250/1250 [==============================] - 138s 110ms/step - loss: 0.4341 - accuracy: 0.8497 - val_loss: 0.9820 - val_accuracy: 0.7148
 ```
+
+Here are some of the images, and the categories my model put them in 
+![predictions](/image%20predictions.png)
